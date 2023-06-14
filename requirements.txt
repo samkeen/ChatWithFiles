@@ -4,3 +4,4 @@ pypdf2
 openai
 chromadb
 tiktoken
+python-dotenv

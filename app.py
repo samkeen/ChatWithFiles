@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
@@ -9,10 +10,14 @@ from PyPDF2 import PdfReader
 from dotenv import load_dotenv
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
-load_dotenv()
+env_loaded = load_dotenv()
+api_key_added = os.getenv("OPENAI_API_KEY").strip() != ""
 
-# Define the main function
 def main():
+  if not env_loaded or not api_key_added:
+    st.error("No .env file found and/or OPENAI_API_KEY not added")
+    st.markdown("`cp dist.env .env` Then add your OpenAI API key to the .env file")
+    return
   
   file = st.file_uploader("Upload your file", type=["pdf", "txt"])
   # Upload the file
