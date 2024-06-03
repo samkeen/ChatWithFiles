@@ -29,4 +29,4 @@ streamlit run app.py
 ```
 
 ### Want to learn more?
-My [weekly newsletter](https://devthinkai.beehiiv.com/) will keep you informed on Generative AI topics important to software developers (without all the hype)
+My weekly newsletter; [DevThink.ai](https://devthink.ai) will keep you informed on Generative AI topics important to software developers (without all the hype)
